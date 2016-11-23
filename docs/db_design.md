@@ -1,6 +1,21 @@
-#爬虫数据库设计
-爬虫数据存储在Mysql数据库
-<table>
-<tr><th>name</th><th>labels</th><th>score</th><th>url</th></tr>
-<tr><td>盗梦空间</td><td>剧情，动作，科幻，悬疑，冒险</td><td>9.2</td><td>https://img3.dou</td></tr>
-</table>
+#数据库设计
+
+##用户表
+	{
+	username: 用户名
+	password: 密码
+	age:	年龄
+	job:	工作
+	}
+
+	job: 1 
+
+##电影信息表
+	{
+		name:  电影名称
+		score: 电影评分
+		labels:标签
+		url:   电影海报的url
+	}
+
+
