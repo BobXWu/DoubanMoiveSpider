@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>电影推荐系统</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  	<!-- jquery -->
+	<script type="text/javascript" src="../static/js/3rd/jquery.js"></script>
+	
+	<!-- bootstrap-material-design -->
+	<link rel="stylesheet" type="text/css" href="../static/css/3rd/bootstrap-material-design.css">
+    <script type="text/javascript" src="../static/js/3rd/material.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="../static/css/3rd/ripples.min.css">
+  	<script type="text/javascript" src="../static/js/3rd/ripples.min.js"></script>
+
+	<link rel="stylesheet" href="../static/css/global.css">
+	<link rel="stylesheet" href="../static/css/login.css">
+	
+	<script type="text/javascript" src="../static/js/md5.js"></script>
+	<script type="text/javascript" src="../static/js/cookie.js"></script>
+  	<script type="text/javascript" src="../static/js/global.js"></script>
+  	<script type="text/javascript" src="../static/js/post.js"></script>
+	<script type="text/javascript" src="../static/js/login.js"></script>
+	
+</head>
+
+<body>
+	<!-- 导航栏 -->
+	<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+<!--                 <a class="navbar-brand" href="javascript:void(0)"><img src="../static/res/image/openmind-icon.png" alt="openmind-icon"></a> -->
+            </div>
+
+            <div class="warning-tips">
+                <a href="javascript:void(0)" class="btn btn-raised btn-warning"></a>
+            </div>
+            
+            <a href="javascript:void(0)" class="btn btn-raised btn-primary" id="signup-toggle-btn">注册</a>
+
+        </div>
+    </nav>
+	
+	<!-- 登录框和注册框部分 -->
+	<article class="container">
+		<div class="login-box well">
+		 	<div class="title">
+				登录
+			</div>
+
+          <form class="form-horizontal">
+          	<div class="form-group label-floating">
+			  <label class="control-label" for="focusedInput1">用户名</label>
+			  <input id="login-username-input" class="form-control" type="text" maxlength="16">
+			</div>
+
+			<div class="form-group label-floating">
+			  <label class="control-label" for="focusedInput1">密码</label>
+			  <input id="login-password-input" class="form-control" type="password" maxlength="16">
+			</div>
+          </form>
+
+          <div class="login-btn-wrapper"><a href="javascript:void(0)" class="btn btn-raised btn-primary" id="login-btn">登录</a>
+          </div>
+        </div>
+
+		<div class="signup-box well">
+			<div class="title">
+				注册
+			</div>
+
+			<form class="form-horizontal signup-form">
+
+          	<div class="form-group label-floating">
+			  <label class="control-label" for="focusedInput1">用户名</label>
+			  <input id="signup-username-input" class="form-control" type="text" maxlength="16">
+			</div>
+
+			<div class="form-group label-floating">
+			  <label class="control-label" for="focusedInput1">密码</label>
+			  <input id="signup-password-input" class="form-control" type="password" maxlength="16">
+			</div>
+
+			<div class="form-group label-floating">
+			  <label class="control-label" for="focusedInput1">确认密码</label>
+			  <input id="signup-confirm-password-input" class="form-control" type="password" maxlength="16">
+			</div>
+			
+
+          </form>
+
+          <div class="signup-btn-wrapper"><a href="javascript:void(0)" class="btn btn-raised btn-primary" id="signup-btn">注册</a>
+          </div>
+
+		</div>
+	</article>
+
+	
+	<!-- 低栏部分 -->
+	<footer>
+		<div class="bottom-name">
+		<a href="/index">电影推荐系统</a></div>
+		<div class="bottom-remark">2016 SouthEast University</div>
+	</footer>
+</body>
+<script>
+   $(function() {
+     $.material.init();
+   });
+   
+</script>
+</html>

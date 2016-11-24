@@ -1,0 +1,28 @@
+.name{
+	font-size: 2em;
+}
+
+.main-pic img{
+	max-width: 150px;
+	
+}
+.main-pic{
+	float: left;
+}
+
+.info{
+	margin-left: 180px;
+}
+
+.score{
+	font-size: 1.8em;
+}
+
+.intro{
+	text-indent: 2em;
+	margin-top: 20px;
+}
+
+.video{
+	margin-top: 10px;
+}
