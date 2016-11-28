@@ -19,10 +19,19 @@
 }
 
 .intro{
+	line-height: 1.5;
 	text-indent: 2em;
 	margin-top: 20px;
 }
 
 .video{
 	margin-top: 10px;
+}
+
+.video-link{
+	line-height: 1.5;
+}
+
+.video-link:hover{
+	text-decoration: underline;
 }
