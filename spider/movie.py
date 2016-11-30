@@ -40,6 +40,8 @@ def worker():
 				print 'insert one ',data['title']
 			else:
 				print "duplicate "+data['title']
+		else:
+			print "no movie message returned from API"
 		SHARE_Q.task_done()
 		print 'Queue: ',SHARE_Q.qsize()
 		time.sleep(20)
@@ -74,17 +76,17 @@ def multiThreadSpider():
 	SHARE_Q.join()
 	print "All done"
 
-def getTag():
+def getTag(tag='剧情'):
 	global SHARE_Q
-	for x in xrange(2,5):
-		url ='https://movie.douban.com/tag/%E5%96%9C%E5%89%A7?start='+ str(x*20) +'&type=T'
+	for x in xrange(0,3):
+		url ='https://movie.douban.com/tag/'+tag+'?start='+ str(x*20) +'&type=T'
 		result = requests.get(url)
 		soup = bs(result.text)
 		ids = soup.findAll('a',attrs={'class':'nbg'})
 		for x in ids:
 			SHARE_Q.put( x['href'].split('/')[-2])
-
+	print SHARE_Q.qsize(),' movie to be stored totally'
 	multiThreadSpider()
 
 if __name__ == '__main__':
-	getTag()
+	getTag('动画短片')

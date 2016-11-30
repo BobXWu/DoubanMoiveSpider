@@ -31,19 +31,19 @@
 		aka:[aka1, aka2]	又名
 		alt:	条目页URL
 		mobile_url:	移动版条目页URL
-		rating:{max:最高分，min:最低分，value：平均评分}
+		rating:{max:最高分，min:最低分，average：平均评分}
 		ratings_count：	评分人数
 		wish_count：	想看人数
 		collect_count：看过人数
 		do_count：在看人数，如果是电视剧，默认值为0，如果是电影值为null
 		images：{}	电影海报图，分别提供288px x 465px(大)，96px x 155px(中) 64px x 103px(小)尺寸
-		subtype: 条目分类, movie或者tv	str	Y	Y	Y	movie
-		directors:	导演，数据结构为影人的简化描述，见附录	array	Y	Y	Y	[]
-		casts:	主演，最多可获得4个，数据结构为影人的简化描述，见附录	array	Y	Y	Y	[]
-		writers:	编剧，数据结构为影人的简化描述，见附录	array	N	Y	Y	[]
-		website:	官方网站	str	N	Y	Y	''
-		douban_site:	豆瓣小站	str	Y	Y	Y	''
-		pubdates:	如果条目类型是电影则为上映日期，如果是电视剧则为首Ï日期	array	N	Y	Y	[]
+		subtype: 条目分类, movie或者tv	str
+		directors:	导演，数据结构为影人的简化描述，见附录	array
+		casts:	主演，最多可获得4个，数据结构为影人的简化描述，
+		writers:	编剧，数据结构为影人的简化描述，见附录
+		website:	官方网站	
+		douban_site:	豆瓣小站
+		pubdates:	如果条目类型是电影则为上映日期，如果是电视剧则为首Ï日期
 		mainland_pubdate:	大陆上映日期，如果条目类型是电影则为上映日期，如果是电视剧则为首播日期
 		pubdate:	兼容性数据，未来会去掉，大陆上映日期，如果条目类型是电影则为上映日期，如果是电视剧则为首播日期
 		year:	年代	str	Y	Y	Y	''

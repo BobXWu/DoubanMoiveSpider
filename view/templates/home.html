@@ -30,30 +30,27 @@
 	<article class="container">
 		<div ng-app="myApp" ng-controller="myCtrl"> 
 			<ul>
-			  <li ng-repeat="moive in data">
-			    <h1 class="name">{{moive.name}}</h1>
+			  <li ng-repeat="movie in data">
+			    <h1><span class="name">{{movie.title}}&nbsp;&nbsp;({{movie.aka[0]}})</span>&nbsp;&nbsp;<span class="year">{{movie.year}}</span></h1>
 				<div class="clearfix">
 					<div class="main-pic">
-						<img src={{moive.url}} alt={{moive.name}}>
+						<img src={{movie.images.large}} alt={{movie.title}}>
 					</div>
 					<div class="info">
 						<span>豆瓣评分:&nbsp;</span>
 						<br>
-						<strong class="score">{{moive.score}}</strong>
+						<strong class="score">{{movie.rating.average}}</strong>
 						<br/>
 						<span>标签:&nbsp;</span>
-						<span ng-repeat="label in moive.labels">{{label}}&nbsp;&nbsp;</span>
+						<span ng-repeat="label in movie.genres">{{label}}&nbsp;&nbsp;</span>
 						<br/>
-						<div class="video">
-							<a ng-repeat="video in moive.video_links" href={{video.url}} class="video-link" target="_blank">
-								{{video.name}}
-								<br>
-							</a>
-					</div>
+						<span>制片国家/地区:&nbsp;</span>
+						<span ng-repeat="country in movie.countries">{{country}}&nbsp;&nbsp;</span>
+						<br>
 					</div>
 				</div>
 				<div class="intro">
-					{{moive.intro}}
+					{{movie.summary}}
 				</div>
 			  </li>
 			</ul>

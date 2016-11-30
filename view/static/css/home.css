@@ -1,11 +1,12 @@
 .name{
-	font-size: 2em;
+	font-size: 1.4em;
 }
 
 .main-pic img{
 	max-width: 150px;
 	
 }
+
 .main-pic{
 	float: left;
 }
