@@ -11,6 +11,8 @@ import configure
 SHARE_Q = Queue.Queue()
 _WORKER_THREAD_NUM =3
 
+Spider_conf = configure.read("../conf/spider.conf")
+print Spider_conf
 
 class MyThread(threading.Thread):
 	def __init__(self, func):
@@ -27,7 +29,8 @@ def getConn(host,db_name,db_user,db_pwd):
 
 def worker():
 	global SHARE_Q
-	conn = getConn('127.0.0.1:28001','recommend','wxb','123456')
+	conn = getConn(Spider_conf['mongo']['host'],\
+		Spider_conf['mongo']['db_name'],Spider_conf['mongo']['db_user'],Spider_conf['mongo']['db_pwd'])
 	while not SHARE_Q.empty():
 		movie_id = SHARE_Q.get()
 		data = detail(movie_id)
@@ -62,7 +65,6 @@ def detail(movie_id):
 	data = requests.get("https://api.douban.com/v2/movie/subject/"+movie_id).json()
 	return data
 
-
 def multiThreadSpider():
 	global SHARE_Q
 	threads = []
@@ -78,7 +80,7 @@ def multiThreadSpider():
 
 def getTag(tag='剧情'):
 	global SHARE_Q
-	for x in xrange(0,3):
+	for x in xrange(0,1):
 		url ='https://movie.douban.com/tag/'+tag+'?start='+ str(x*20) +'&type=T'
 		result = requests.get(url)
 		soup = bs(result.text)
@@ -89,4 +91,4 @@ def getTag(tag='剧情'):
 	multiThreadSpider()
 
 if __name__ == '__main__':
-	getTag('动画短片')
+	getTag('浪漫')
