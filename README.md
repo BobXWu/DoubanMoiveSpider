@@ -8,9 +8,9 @@
 <ul>
 <li>前端模块： html, javascript, css, 使用框架包括bootstrap, material-design, jQuery， angularJS等
 </li>
-<li>推荐算法模块: java
+<li>推荐算法模块: java 使用框架包括hadoop 基于物品的协同过滤算法
 </li>
-<li>后端模块: java
+<li>后端模块: java 使用框架包括Spring
 </li>
 </ul>
 
@@ -20,12 +20,17 @@
 </li>
 <li>view文件夹中是web前端文件
 </li>
+<li>conf是服务器配置文件
+</li>
+<li>log是日志文件
+</li>
 </ul>
 
 ##项目分工
 <table>
 <tr><th>组员</th><th>负责部分</th></tr>
-<tr><td>祁辉</td><td>网络爬虫</td></tr>
-<tr><td>冯裕浩 吴小宝</td><td>推荐算法部分 web后端</td></tr>
+<tr><td>吴小宝</td><td>网络爬虫</td></tr>
+<tr><td>冯裕浩 吴小宝</td><td>推荐算法部分</td></tr>
+<tr><td>祁辉</td><td>web后端</td></tr>
 <tr><td>吴小宝 侯安</td><td>web前端</td></tr>
 </table>

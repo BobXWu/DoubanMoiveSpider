@@ -31,7 +31,7 @@
 		<div ng-app="myApp" ng-controller="myCtrl"> 
 			<ul>
 			  <li ng-repeat="movie in data">
-			    <h1><span class="name">{{movie.title}}&nbsp;&nbsp;({{movie.aka[0]}})</span>&nbsp;&nbsp;<span class="year">{{movie.year}}</span></h1>
+			    <h1><span class="name" ng-show="movie.show">{{movie.title}}&nbsp;&nbsp;({{movie.aka[0]}})</span>&nbsp;&nbsp;<span class="year">{{movie.year}}</span></h1>
 				<div class="clearfix">
 					<div class="main-pic">
 						<img src={{movie.images.large}} alt={{movie.title}}>

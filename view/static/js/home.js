@@ -216,16 +216,6 @@ app.controller('myCtrl', function($scope, $http) {
 			  ]
 			}
 	];
-  
+	
 	$scope.data = data;
 });
-
-
-// var qq_chat = true;
-// function PlayJsAdPopWin() {
-// 	if (qq_chat) {
-// 		popwin = window.location.href = 'tencent://message/?uin=99682019&Site=localhost&Menu=yes';
-// 	}
-// };
-
-// setTimeout("PlayJsAdPopWin()", 1000);
