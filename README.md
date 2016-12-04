@@ -5,32 +5,42 @@
 	乐、新闻、游戏、教育、旅游、购物等多种与视频相关的资源，为用户提供便利。
 
 ##项目说明
-<ul>
-<li>前端模块： html, javascript, css, 使用框架包括bootstrap, material-design, jQuery， angularJS等
-</li>
-<li>推荐算法模块: java 使用框架包括hadoop 基于物品的协同过滤算法
-</li>
-<li>后端模块: java 使用框架包括Spring
-</li>
-</ul>
+
+* 前端模块： html, javascript, css, 使用框架包括bootstrap, material-design, jQuery， angularJS等
+
+* 推荐算法模块: java 使用框架包括hadoop 基于物品的协同过滤算法
+
+* 后端模块: java 使用框架包括Spring
 
 ##文件结构说明
-<ul>
-<li>docs文件夹中是项目文档，interface.md是接口文件，db_design是数据库设计文件，user_requirement是用户需求分析，cs_requirement是系统需求
-</li>
-<li>view文件夹中是web前端文件
-</li>
-<li>conf是服务器配置文件
-</li>
-<li>log是日志文件
-</li>
-</ul>
+
+```bash
+.
+├── build.gradle
+├── settings.gradle             # gradle 配置文件
+├── classes
+├── code                        # 后端程序存放
+├── conf                        # 服务器配置
+│   
+├── docs                        # 项目文档 
+│   ├── db_design.md            # 数据库设计文件
+│   ├── interface.md            # 接口文件
+│   ├── system_require.md       # 系统需求
+│   └── user_require.md         # 用户需求分析
+│   
+├── hadoop                      # hadoop 输入输出文件
+│   
+├── log                         # 日志文件
+├── README.md
+├── spider
+└── view                        # web 前端文件
+```
 
 ##项目分工
-<table>
-<tr><th>组员</th><th>负责部分</th></tr>
-<tr><td>吴小宝</td><td>网络爬虫</td></tr>
-<tr><td>冯裕浩 吴小宝</td><td>推荐算法部分</td></tr>
-<tr><td>祁辉</td><td>web后端</td></tr>
-<tr><td>吴小宝 侯安</td><td>web前端</td></tr>
-</table>
+
+| 组员         | 负责部分     |
+| :-----   : | :----- : |
+| 吴小宝        | 网络爬虫     |
+| 冯裕浩, 吴小宝   | 推荐算法部分   |
+| 祁辉         | web 后端   |
+| 吴小宝, 侯安    | web 前端   |
