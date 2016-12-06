@@ -14,7 +14,6 @@ sys.setdefaultencoding('utf8')
 SHARE_Q = Queue.Queue()
 _WORKER_THREAD_NUM =3
 FILE_LOCK = threading.Lock()
-ISOTIMEFORMAT = '%Y-%m-%d %X'
 Spider_conf = configure.read("../conf/spider.conf")
 print Spider_conf
 
@@ -99,11 +98,11 @@ def getTag(tag='剧情'):
 	multiThreadSpider()
 
 def writeLog(str):
-	current_time = time.strftime( ISOTIMEFORMAT, time.localtime( time.time() ) )
+	current_time = time.strftime( '%Y-%m-%d %X', time.localtime( time.time() ) )
 	FILE_LOCK.acquire(True)
 	with open('../log/spider.log','a') as log:
 		log.write( str.decode('utf-8') + " " + current_time + "\n" )
 		FILE_LOCK.release()
 
 if __name__ == '__main__':
-	getTag('悬疑')
+	getTag('爱情')
