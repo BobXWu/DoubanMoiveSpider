@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1325468520/MoiveRecommendationSystem.iml" filepath="$PROJECT_DIR$/.idea/modules/1325468520/MoiveRecommendationSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1663751220/code.iml" filepath="$PROJECT_DIR$/.idea/modules/1663751220/code.iml" group="code" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1663751220/code_main.iml" filepath="$PROJECT_DIR$/.idea/modules/1663751220/code_main.iml" group="code" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1663751220/code_test.iml" filepath="$PROJECT_DIR$/.idea/modules/1663751220/code_test.iml" group="code" />
+    </modules>
+  </component>
+</project>

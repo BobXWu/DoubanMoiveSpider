@@ -1,6 +1,7 @@
 
 # 将idea文件过滤
 code/.idea/
+code/build/
 
 #### joe made this: http://goel.io/joe
 #### eclipse ####

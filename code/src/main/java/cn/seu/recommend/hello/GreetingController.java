@@ -1,4 +1,4 @@
-package hello;
+package cn.seu.recommend.hello;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
