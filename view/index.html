@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/3rd/angular-material.min.css">
+	<link rel="stylesheet" href="css/3rd/ng-animation.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<script src="js/3rd/angular.min.js"></script>
+	<script src="js/3rd/angular-animate.min.js"></script>
+	<script src="js/3rd/angular-aria.min.js"></script>
+	<script src="js/3rd/angular-messages.min.js"></script>
+	<script src="js/3rd/angular-material.min.js"></script>
+	<script src="js/index.js"></script>
+
+	<div ng-app="app" ng-controller="AppCtrl" ng-cloak >
+  		<md-content class="rotate-in md-padding" layout-xs="row" layout="row" layout-align="center" ng-repeat="movie in data">
+		    <div flex-xs flex-gt-xs="50" layout="column">
+		      <md-card>
+		        <md-card-title>
+					<md-card-title-text>
+						<span class="name md-headline">{{movie.title}}</span>
+						<span class="md-subhead">{{movie.aka[0]}} {{movie.year}}</span>
+						<div class="info md-subhead">
+							<span>豆瓣评分:&nbsp;</span>
+							<br>
+							<strong class="score">{{movie.rating.average}}</strong>
+							<br/>
+							<span>标签:&nbsp;</span>
+							<span ng-repeat="label in movie.genres">{{label}}&nbsp;&nbsp;</span>
+							<br/>
+							<span>制片国家/地区:&nbsp;</span>
+							<span ng-repeat="country in movie.countries">{{country}}&nbsp;&nbsp;</span>
+							<br>
+						</div>
+						<div class="">
+				<md-radio-group ng-model="movie.checked" layout="row">
+					<md-radio-button ng-value="false" class="md-primary" >想看</md-radio-button>
+					<md-radio-button ng-value="true"> 看过 </md-radio-button>
+				</md-radio-group>
+				<div ng-show="movie.checked" class="slide-left">
+					<md-icon class="score-star" ng-repeat="star in movie.stars" ng-click="starClick(movie, $index)" ng-class="star.content" md-font-library="material-icons">{{star.content}}</md-icon>
+					<span>{{movie.score}}分</span>
+				</div>
+			</div>
+					</md-card-title-text>
+					<md-card-title-media>
+						<div class="md-media-lg card-media main-pic">
+							<img src={{movie.images.large}} alt={{movie.title}}>
+						</div>
+					</md-card-title-media>
+				</md-card-title>
+		        <md-card-actions layout="row" layout-align="end center">
+					<md-button ng-click="introToggle(movie)">简介</md-button>
+		        </md-card-actions>
+		        <div class="intro"  ng-hide='!movie.show'>
+		        	<md-card-content>
+		        		{{movie.summary}}
+		        	</md-card-content>
+		        </div>
+		      </md-card>
+		    </div>
+  		</md-content>
+  		
+		<div layout="row" layout-sm="column" layout-align="space-around">
+			<md-button id="submit" class="md-raised md-primary" ng-click="submit()">确定</md-button>	
+		</div>
+		<div ng-show="processing" class="process-bk">
+			<md-progress-circular class="process-circular" md-mode="indeterminate"></md-progress-circular>
+		</div>
+		
+	</div>
+	
+  <script>
+	
+	
+
+  </script>
+</body>
+</html>

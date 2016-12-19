@@ -1,65 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/3rd/angular-material.min.css">
-	<link rel="stylesheet" href="css/3rd/ng-animation.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-	<script src="js/3rd/angular.min.js"></script>
-	<script src="js/3rd/angular-animate.min.js"></script>
-	<script src="js/3rd/angular-aria.min.js"></script>
-	<script src="js/3rd/angular-messages.min.js"></script>
-	<script src="js/3rd/angular-material.min.js"></script>
+angular.module('app', ['ngMaterial','ngAnimate'])
+	.controller('AppCtrl', function($scope,$http) {
 
-	<div ng-app="app" ng-controller="AppCtrl" ng-cloak >
-  		<md-content class="rotate-in md-padding" layout-xs="row" layout="row" layout-align="center" ng-repeat="movie in data">
-		    <div flex-xs flex-gt-xs="50" layout="column">
-		      <md-card>
-		        <md-card-title>
-					<md-card-title-text>
-						<span class="name md-headline">{{movie.title}}</span>
-						<span class="md-subhead">{{movie.aka[0]}} {{movie.year}}</span>
-						<div class="info md-subhead">
-							<span>豆瓣评分:&nbsp;</span>
-							<br>
-							<strong class="score">{{movie.rating.average}}</strong>
-							<br/>
-							<span>标签:&nbsp;</span>
-							<span ng-repeat="label in movie.genres">{{label}}&nbsp;&nbsp;</span>
-							<br/>
-							<span>制片国家/地区:&nbsp;</span>
-							<span ng-repeat="country in movie.countries">{{country}}&nbsp;&nbsp;</span>
-							<br>
-						</div>
-					</md-card-title-text>
-					<md-card-title-media>
-						<div class="md-media-lg card-media main-pic">
-							<img src={{movie.images.large}} alt={{movie.title}}>
-						</div>
-		          </md-card-title-media>
-		        </md-card-title>
-		        <md-card-actions layout="row" layout-align="end center">
-					<md-button ng-click="introToggle(movie)">简介</md-button>
-		        </md-card-actions>
-		        <div class="intro"  ng-hide='!movie.show'>
-		        	<md-card-content>
-		        		{{movie.summary}}
-		        	</md-card-content>
-		        </div>
-		      </md-card>
-		    </div>
-  		</md-content>
-	</div>
-	
-  <script>
-	angular.module('app', ['ngMaterial','ngAnimate'])
-	.controller('AppCtrl', function($scope) {
-	  	
-		var data=[
+		data=[
 				{
 				  "rating": {
 				    "max": 10,
@@ -77,7 +19,7 @@
 				    "medium": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2393044761.jpg"
 				  },
 				  "alt": "https://movie.douban.com/subject/25921812/",
-				  "id": "25921812",
+				  "_id": "25921812",
 				  "mobile_url": "https://movie.douban.com/subject/25921812/mobile",
 				  "title": "驴得水",
 				  "do_count": null,
@@ -184,7 +126,7 @@
 				    "medium": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2393044761.jpg"
 				  },
 				  "alt": "https://movie.douban.com/subject/25921812/",
-				  "id": "25921812",
+				  "_id": "25921812",
 				  "mobile_url": "https://movie.douban.com/subject/25921812/mobile",
 				  "title": "驴得水",
 				  "do_count": null,
@@ -276,23 +218,68 @@
 				}
 			];
 
-		data[0].show = false;
-		data[1].show = false;
-
-		$scope.data = [];
+		// $scope.data = [];
 
 		$scope.introToggle = function(movie){
 			movie.show = !movie.show;
 		}
 
 		$scope.add = function(){
+			// $http.post('/recommend', data)
+			// .success(function(response){
+			// 	console.log(response);
+			// });
+			$scope.processing = false;
+
+			for (var i = 0; i < data.length; i++) {
+				data[i]['stars']=[
+					{content:'star'},
+					{content:'star_border'},
+					{content:'star_border'},
+					{content:'star_border'},
+					{content:'star_border'}
+				];
+				data[i]['score']= 10;
+				data[i]['checked']=false;
+				data[i].show =false;
+			}
+
 			$scope.data = data;
 		};
 
-		$scope.add();
-	});
-	
+		$scope.starClick = function(movie, $index){
+			var index = $scope.data.indexOf(movie);
+			$scope.data[index]['score'] = ($index+1)*10;
+			for (var i = 0; i <= $index; i++) {
+				$scope.data[index]['stars'][i]['content']='star';
+			}
 
-  </script>
-</body>
-</html>
+			for (var i = $index+1; i < 5; i++) {
+				$scope.data[index]['stars'][i]['content'] = 'star_border';
+			}
+		}
+
+		$scope.submit = function(){
+			$scope.processing = true;
+			var movies = $scope.data;
+			var data=[];
+			for (var i = 0; i < movies.length; i++) {
+				if(movies[i].checked){
+					console.log(movies[i]['score']);
+					data.push({'movie_id':movies[i]['_id'],'score':movies[i]['score']});
+				}else{
+					data.push({'movie_id':movies[i]['_id'],'score':50});
+				}
+			}
+
+			// $http.post('/recommend', data)
+			// .success(function(response){
+			// 	console.log(response);
+			// });
+
+			// console.log( data );
+		}
+
+		$scope.add();
+
+	});

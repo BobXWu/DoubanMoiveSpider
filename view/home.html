@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/3rd/angular-material.min.css">
+	<link rel="stylesheet" href="css/3rd/ng-animation.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+	<script src="js/3rd/angular.min.js"></script>
+	<script src="js/3rd/angular-animate.min.js"></script>
+	<script src="js/3rd/angular-aria.min.js"></script>
+	<script src="js/3rd/angular-messages.min.js"></script>
+	<script src="js/3rd/angular-material.min.js"></script>
+	<script src="js/home.js"></script>
+
+	<div class="" ng-app="app"  ng-controller="AppCtrl">
+		<md-radio-group ng-model="checked">
+			<md-radio-button ng-value="false" class="md-primary">想看</md-radio-button>
+			<md-radio-button ng-value="true"> 看过 </md-radio-button>
+			</md-radio-group>
+		<div ng-show="checked" class="slide-left">
+			<md-icon class="score-star" ng-repeat="star in stars" ng-click="starClick($scope, $index)" ng-class="star.content" md-font-library="material-icons">{{star.content}}</md-icon>
+			<span>{{score*10}}分</span>
+		</div>
+	</div>
+	
+</body>
+</html>

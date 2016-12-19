@@ -6,11 +6,18 @@
 
 ##项目说明
 
-* 前端模块： html, javascript, css, 使用框架包括bootstrap, material-design, jQuery， angularJS等
+* 前端模块： html, javascript, css, 使用框架包括bootstrap, material-design, jQuery, angularJS等
 
 * 推荐算法模块: java 使用框架包括hadoop 基于物品的协同过滤算法
 
 * 后端模块: java 使用框架包括Spring
+
+* 爬虫模块: python 使用框架包括request, BeautifulSoup 根据标签爬取豆瓣网上的电影和用户评分
+
+* 推荐流程说明(只针对新用户)
+	1.	新用户登录后返回评价较高的电影给用户
+	2.	用户评完分后，评分信息传给服务端处理
+	3.	前端展示推荐结果
 
 ##文件结构说明
 
@@ -40,10 +47,28 @@
 
  <table>
  <tr><th>组员</th><th>负责部分</th></tr>
- <tr><td>祁辉</td><td>网络爬虫</td></tr>
--<tr><td>冯裕浩 吴小宝</td><td>推荐算法部分</td></tr>
--<tr><td>吴小宝</td><td>服务端架构</td></tr>
--<tr><td>侯安</td><td>web前端</td></tr>
-+<tr><td>冯裕浩 吴小宝</td><td>推荐算法部分 web后端</td></tr>
-+<tr><td>吴小宝 侯安</td><td>web前端</td></tr>
+ <tr><td>吴小宝</td><td>网络爬虫</td></tr>
+<tr><td>冯裕浩</td><td>推荐算法部分</td></tr>
+<tr><td>祁辉</td><td>服务端架构</td></tr>
+<tr><td>吴小宝 侯安</td><td>web前端</td></tr>
  </table>
+
+##待完成的提交文件
+* 演示视频
+	*	演示打分，显示推荐结果的过程
+* 展示ppt
+	*	推荐原理介绍
+		*	基于物品的协同过滤推荐
+	*	效果展示
+	*	项目亮点
+		*	hadoop分布式框架
+		*	电影信息爬虫有选择性
+		*	提供前端界面
+* 架构图
+
+##未完成功能
+1.	爬虫后台管理员
+	*	管理员可以查看电影信息
+	*	管理员可以修正电影的某个信息项(名字，年份，简介)
+2.	用户行为分析中的观看时长，搜索习惯。因为系统无法直接提供视频资源，所以不能收集用户行为数据
+3.	自然语言处理

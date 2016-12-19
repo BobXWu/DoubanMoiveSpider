@@ -1,0 +1,47 @@
+.main-pic.card-media{
+	height: auto;
+	max-width: 150px;
+}
+
+.score{
+	font-size: 2em;
+}
+
+.intro{
+	transition: height ease-in .2s;
+	overflow: hidden;
+	height: 150px;
+	text-indent: 2em;
+}
+
+.intro.ng-hide{
+	height: 0;
+}
+
+.score-star{
+	outline: none;
+	cursor: pointer;
+}
+
+.score-star.star{
+	color: #ffb300;
+}
+
+#submit{
+	background: #26a69a;
+}
+
+.process-bk{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.3);
+	pointer-events: none;
+}
+
+.process-circular{
+	top: 200px;
+	margin: auto;
+}

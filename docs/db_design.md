@@ -62,4 +62,3 @@
 		photos:	电影剧照，前10张，见附录	array	N	Y	Y	[]
 		popular_reviews:	影评，前10条，影评结构
 	}
-
